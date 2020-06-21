@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Datas</title>
+        <meta charset= "UTF-8">
+    </head>
+    <body>
+
+        <form method="get" action="index.php">
+        <div class="a">
+            <h2>Diferenca datas em dias</h2>
+            <div class=
+                <label for="date1"><h3>1º Data</h3><label>
+                <input type="date" name="date1" id="date1" >
+                    <br>
+                    <br>
+                <label for="date2"><h3>2º Data</h3><label>
+                <input type="date" name="date2" id="date2" >
+                    </div>
+                    </div>
+                    <br>
+                    <br>
+                <div class="c">
+                <input type="submit" value="Diferenca em dias">
+                </form>
+            <?php
+                $D = $_GET["date1"];
+                $D0 = $_GET["date2"];
+                    if($D and $D0){
+                        $Data = new DateTime($D);
+                        $Data0 = new DateTime($D0);
+                        $dateDiff = $Data->diff($Data0);
+                        echo "<br> <br> A diferenca é de: ". $dateDiff->days."";
+                }
+            ?>
+    </body>
+</html>
+		
